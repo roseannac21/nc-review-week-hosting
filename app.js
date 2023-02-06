@@ -1,8 +1,10 @@
+const cors = require("cors")
 const db = require("./db/connection");
 const express = require("express");
 const app = express();
 const { getCategories, getReviews, getReview, postCommentById, getCommentsForReview, patchVotes, getUsers, deleteComment } = require('./controller')
 
+app.use(cors())
 app.use(express.json());
 
 app.get("/api/", (request, response) => {
