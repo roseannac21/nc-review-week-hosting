@@ -77,7 +77,7 @@ const addNewComment = (review_id, author, body) => {
 }
 
 const fetchCommentsForReview = (id) => {
-    let queryStr = `SELECT * FROM comments WHERE review_id = $1;`
+    let queryStr = `SELECT * FROM comments WHERE review_id = $1 ORDER BY created_at DESC;`
 
   if (isNaN(id) || id === NaN) {
     return Promise.reject({status: 400, msg: "invalid ID data type"})
