@@ -18,7 +18,7 @@ const fetchReviews = (sort_by = "created_at", order = "desc", category) => {
         return Promise.reject({status: 400, msg: "invalid order query"})
       };
 
-    if (category !== undefined && !["social deduction", "dexterity", "strategy", "hidden-roles", "push-you-luck", "deck-building", "engine-building", "roll-and-write"].includes(category)) {
+    if (category !== undefined && !["social deduction", "dexterity", "strategy", "hidden-roles", "push-your-luck", "deck-building", "engine-building", "roll-and-write"].includes(category)) {
         return Promise.reject({status: 400, msg: "invalid category query"})
       };
 
